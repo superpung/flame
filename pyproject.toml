@@ -1,0 +1,28 @@
+[project]
+name = "flame"
+version = "0.1.0"
+description = "Enhancing functional coverage in processor verification using Large Language Models"
+authors = [
+    { name = "Anonymous", email = "" }
+]
+dependencies = [
+    "openai>=1.61.1",
+    "python-dotenv>=1.0.1",
+    "pyyaml>=6.0.2",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/flame"]
