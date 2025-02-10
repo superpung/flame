@@ -16,17 +16,18 @@ class Config:
         self.config_checker()
 
     def config_checker(self):
+        all_keys = [
+            "LOCAL_API_KEY",
+            "LOCAL_API_BASE",
+            "PHIND_34B_MODEL",
+            "CODELLAMA_13B_MODEL",
+            "CODELLAMA_7B_MODEL",
+            "GPT_35_TURBO_0125_MODEL",
+        ]
         assert all(
             key in self.config
-            for key in [
-                "LOCAL_API_KEY",
-                "LOCAL_API_BASE",
-                "PHIND_34B_MODEL",
-                "CODELLAMA_13B_MODEL",
-                "CODELLAMA_7B_MODEL",
-                "GPT_35_TURBO_0125_MODEL",
-            ]
-        ), "Missing required keys in .env file"
+            for key in all_keys
+        ), f"Missing required keys {all_keys} in .env file"
 
 
 class EmptyResponseError(Exception):
